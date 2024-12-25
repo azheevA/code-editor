@@ -1,0 +1,24 @@
+{
+  "code": [
+    {
+      "id": "1",
+      "name": "Steve",
+      "profession": "frontend-developer"
+    },
+    {
+      "id": "2",
+      "name": "Oliver",
+      "profession": "backend-developer"
+    },
+    {
+      "id": "9e8d",
+      "name": "Александр Ажеев",
+      "profession": "Фронтенд разработчик"
+    },
+    {
+      "id": "691c9429-6700-4ed4-bf72-584a8daeaf10",
+      "name": "Павлов Павел",
+      "profession": "Бэкенд разработчик"
+    }
+  ]
+}
