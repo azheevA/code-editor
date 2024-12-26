@@ -1,50 +1,64 @@
-# React + TypeScript + Vite
+# Приложение "Код редактор"
+## Простое React-приложение, на котором можно писать код на языках javascript и python. Приложение реализована с использованием codemirror 
+как основа самой идеи. Развернут с помощью сборщика **_vite_** на языке *typescript*.
+Ссылку на GitHub Pages: [https://azheeva.github.io/code-editor/](https://azheeva.github.io/code-editor/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Технологии
 
-Currently, two official plugins are available:
+    - TypeScript
+    - React (^18.3.1)
+    - React-router-dom (^7.1.1)
+    - Codemirror
+    - Vite
+    - concurrently
+    - json-server
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Запуск
+`npm run dev`
+вместе с запуском сборки, происходит запуск сервера *node server.js* благодаря пакету concurrently.
 
-## Expanding the ESLint configuration
+Вы можете клонировать проект командой:
+`git clone https://github.com/azheevA/code-editor.git`
+перед этим указав папку через команду `cd`.
+### Необходимые зависимости 
+Чтобы установить необходимые зависимости пропишите или скопируйте в термина команду:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+      `npm install` 
+или просто кратко:
+      `npm i`
+      
+## Описание компонентов
+ - App — Корневой компонент, который реализует необходимую маршрутизацию.
+ - Navbar — UI компонент или header, который облегчает переход между основными компонентами.
+ - CodeMirror — Основной компонент, в котором как раз реализована оболочка редактора,
+а также его запуск и вывод компиляции.
+ - CodeMirror — подлючение библиотеки CodeMirror и его конфигурация.
+ - MockCode — Компонент, отвечающий за взаимодействие с сервером: отправка кода
+ и языка программирования на сервер для выполнения, а также вывод результатов выполнения или ошибок.
+ -  Server — Серверная логика выполнения кода, где используется библиотека json-server
+    для создания простого (ложного) API, который принимает код от клиента и выполняет его.
 
-- Configure the top-level `parserOptions` property like this:
+        *дерево коспонентов программы*
+        src/
+        ├── CodeMirror/
+        │   ├── CodeMirror.tsx
+        │   └── CodeMirror.module.scss
+        ├── CodeMirrorEditor/
+        │   ├── CodeMirrorEditor.tsx
+        │   └── CodeMirrorEditor.module.scss
+        ├── MockData/
+        │   ├── mockCode.tsx
+        │   └── mockCode.module.scss
+        ├── ├──...
+        ├── Types/
+        │   └── Code.Interface.ts
+        ├──...
+        ├── app.tsx
+        ├── app.css
+        ├── main.tsx
+        ├──...
+        ├──server.js
+        ├──mockDB.json
+        ├──...
+        └── ...
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
