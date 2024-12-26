@@ -59,11 +59,13 @@ const CodeMirrorApp: React.FC = () => {
                 >
                     Компилировать
                 </button>
-                <h2>Результат компиляции:</h2>
-                <div
-                    className={styles.output}
-                >
-                    {output}
+                <div className={styles.compilation}>
+                    <h3>Результат компиляции:</h3>
+                    <div
+                        className={styles.output}
+                    >
+                        {output}
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,13 +1,15 @@
-.btn{
-  margin: 15px;
-}
-.result{
-  border: 1px solid #ddd;
-  padding: 8px;
-  color: #959595;
-  background-color: #1e1e1e;
-  width: 50%;
-  margin-top: 10px;
-  height: 70px;
-  overflow: auto;
+.mock_result{
+  .btn{
+    margin: 15px;
+  }
+  .result{
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: #959595;
+    background-color: #1e1e1e;
+    width: 50%;
+    margin-top: 10px;
+    height: 70px;
+    overflow: auto;
+  }
 }

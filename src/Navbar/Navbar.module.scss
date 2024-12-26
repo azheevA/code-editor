@@ -6,24 +6,25 @@
   align-items: center;
   background-color: #1a1a1a;
 
+  .btn {
+    height: 40px;
+    width: auto;
+    margin: 5px;
+    padding: 5px 10px;
+    border: 1px solid #1a1a1a;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #555;
+  }
+
+  .active {
+    background-color: #007bff; /* Цвет для активного состояния */
+  }
 }
 
-.btn {
-  height: 40px;
-  width: auto;
-  margin: 5px;
-  padding: 5px 10px;
-  border: 1px solid #1a1a1a;
-  text-decoration: none;
-  color: white;
-  background-color: #333;
-  border-radius: 5px;
-}
 
-.btn:hover {
-  background-color: #555;
-}
-
-.active {
-  background-color: #007bff; /* Цвет для активного состояния */
-}

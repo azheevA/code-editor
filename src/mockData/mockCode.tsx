@@ -38,7 +38,7 @@ const MockCode: React.FC<MockCodeProps> = ({ code, language }) => {
     }, []);
 
     return (
-        <div>
+        <div className={styles.mock_result}>
 
             <button className={styles.btn} onClick={executeCode}>Компилировать по моковым данным</button>
 
