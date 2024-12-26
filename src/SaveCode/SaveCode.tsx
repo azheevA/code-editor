@@ -26,7 +26,8 @@ const SaveCode:React.FC<ICodeSavedProps> = ({CodeSaved}) => {
             if(CodeSaved) CodeSaved(newCode);
 
         }catch (error){
-            if(error.message === 'error'){
+            const err = error as Error;
+            if(err.message === 'error'){
                 console.error('Ошибка:', error);
             }
         }

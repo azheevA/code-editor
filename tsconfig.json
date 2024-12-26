@@ -5,6 +5,8 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "./global.d.ts"]
+    "typeRoots": ["./node_modules/@types", "./global.d.ts"],
+    "noUnusedLocals": false, //временно
+    "noUnusedParameters": false //временно
   }
 }

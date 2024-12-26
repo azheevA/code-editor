@@ -6,18 +6,18 @@ const Navbar: React.FC = () => {
     return (
         <nav className={styles.navbar}>
             <NavLink
-                className={({ isActive }: Parameters<NavLinkProps['className']>[0]) =>
+                to="/"
+                className={({ isActive }: Parameters<Exclude<NavLinkProps['className'], string | undefined>>[0]) =>
                     isActive ? `${styles.btn} ${styles.active}` : styles.btn
                 }
-                to="/"
             >
                 Home
             </NavLink>
             <NavLink
-                className={({ isActive }: Parameters<NavLinkProps['className']>[0]) =>
+                to="/code"
+                className={({ isActive }: Parameters<Exclude<NavLinkProps['className'], string | undefined>>[0]) =>
                     isActive ? `${styles.btn} ${styles.active}` : styles.btn
                 }
-                to="/json"
             >
                 Code
             </NavLink>

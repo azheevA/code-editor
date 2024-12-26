@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {ICode} from "../Types/Code.interface.ts";
+import React from 'react';
+
 
 
 
 
 
 const ListCode: React.FC= () => {
-    const [codes,setCodes] = useState<ICode>()
+
     return (
         <>
 
